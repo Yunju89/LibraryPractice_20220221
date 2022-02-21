@@ -1,11 +1,13 @@
 package org.techtown.librarypractice_20220221
 
+import android.Manifest
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.gun0912.tedpermission.PermissionListener
+import com.gun0912.tedpermission.normal.TedPermission
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     fun setupEvents(){
 
         btnCall.setOnClickListener {
+
 
 //            권한 승인 여부에 따른, 행동 방안을 작성해서 => pl 변수에 담아두자.
             val pl = object : PermissionListener {
@@ -41,6 +44,12 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
+
+            //            실제로 권한을 물어보자.
+            TedPermission.create()
+                .setPermissionListener(pl)
+                .setPermissions(Manifest.permission.CALL_PHONE)
+                .check()
 
         }
 
