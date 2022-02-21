@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun setupEvents(){
+    fun setupEvents() {
 
         btnCall.setOnClickListener {
 
@@ -39,7 +39,8 @@ class MainActivity : AppCompatActivity() {
                 override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
 
 //                    승인이 거절되었을 때 할 행동
-                    Toast.makeText(this@MainActivity, "권한이 거절되어, 통화가 불가능합니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, "권한이 거절되어, 통화가 불가능합니다.", Toast.LENGTH_SHORT)
+                        .show()
 
                 }
 
@@ -59,12 +60,12 @@ class MainActivity : AppCompatActivity() {
 
 //            사진을 크게 보는 액티비티로 이동
 
-            val myIntent = Intent(this,ViewPhotoActivity::class.java)
+            val myIntent = Intent(this, ViewPhotoActivity::class.java)
             startActivity(myIntent)
         }
     }
 
-    fun setValues(){
+    fun setValues() {
 
     }
 }
