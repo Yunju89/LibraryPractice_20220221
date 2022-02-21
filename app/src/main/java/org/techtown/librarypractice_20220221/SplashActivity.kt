@@ -14,7 +14,6 @@ class SplashActivity : AppCompatActivity() {
         val myHandler = Handler(Looper.getMainLooper())
 
         myHandler.postDelayed( {
-
 //           shift + tap => 들여쓰기 바깥으로
            val myIntent = Intent(this, MainActivity::class.java)
             startActivity(myIntent)
